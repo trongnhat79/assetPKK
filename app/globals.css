@@ -18,3 +18,22 @@ body {
 }
 button, input, select { font: inherit; }
 button { cursor: pointer; }
+
+.form-input {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #fff;
+  padding: 9px 11px;
+  color: #334155;
+  font-size: 12px;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.form-input::placeholder { color: #94a3b8; }
+.form-input:focus {
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
