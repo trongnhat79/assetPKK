@@ -1,24 +1,43 @@
 # AssetPKK — Quản lý tài sản IT
 
-Ứng dụng web nội bộ để theo dõi máy tính, màn hình và thiết bị IT theo mã tài sản/serial, người sử dụng, tình trạng và lịch sử bàn giao.
+Giao diện quản lý tài sản nội bộ, bố trí theo mẫu Excel hiện có của PKK.
 
-## Công nghệ
-- Next.js + TypeScript
-- Tailwind CSS
-- Lucide icons
+## Các trường dữ liệu
+- No
+- Họ Và Tên
+- MSNV
+- Chức vụ
+- Phòng ban
+- Ghi chú
+- Ngày cấp
+- MTS1
+- S/N1
+- Loại TS1
+- Model1
 
-## Chạy ở máy cá nhân
-1. Cài Node.js bản LTS.
-2. Mở terminal tại thư mục dự án.
-3. Chạy `npm install`.
-4. Chạy `npm run dev`.
-5. Mở http://localhost:3000.
+## Chức năng giao diện hiện tại
+- Dashboard thống kê tổng tài sản, đang sử dụng, sẵn sàng, đang sửa chữa.
+- Tìm kiếm theo nhân viên, MSNV, mã tài sản, serial, loại thiết bị, model, phòng ban.
+- Lọc theo trạng thái, loại tài sản và phòng ban.
+- Thêm, sửa, xóa bản ghi tài sản.
+- Xuất danh sách đã lọc thành CSV UTF-8 mở được bằng Excel.
+- Responsive cho màn hình máy tính bảng và điện thoại.
 
-## Trạng thái hiện tại
-Bản khởi tạo giao diện dashboard với dữ liệu minh họa phía trình duyệt. Chưa kết nối cơ sở dữ liệu, đăng nhập Microsoft Entra ID hoặc lưu trữ dùng chung. Không nhập dữ liệu tài sản thật cho đến khi hoàn tất phần xác thực và cơ sở dữ liệu.
+## Chạy thử trên máy tính
+Yêu cầu Node.js LTS.
 
-## Lộ trình tiếp theo
-- Kết nối PostgreSQL/Supabase và thiết lập phân quyền.
-- Đăng nhập Microsoft Entra ID.
-- CRUD tài sản, nhân viên và bàn giao.
-- Nhật ký thay đổi, nhập/xuất Excel và triển khai môi trường production.
+```bash
+npm install
+npm run dev
+```
+
+Mở http://localhost:3000.
+
+## Lưu ý quan trọng
+Đây mới là **bản giao diện thử nghiệm** với dữ liệu minh họa. Các thao tác thêm/sửa/xóa chỉ giữ trong bộ nhớ của trình duyệt và sẽ mất khi tải lại trang. Chưa kết nối cơ sở dữ liệu, đăng nhập Microsoft Entra ID, phân quyền, nhật ký bàn giao hoặc nhập dữ liệu Excel thật. Không sử dụng dữ liệu nhân viên/tài sản thật cho đến khi hoàn thiện các phần này.
+
+## Các bước tiếp theo
+1. Xác nhận cách tổ chức nhiều tài sản cho một nhân viên (MTS1/SN1/Loại TS1/Model1, có thể tiếp tục MTS2...).
+2. Thiết kế cơ sở dữ liệu chuẩn hóa tài sản và nhân viên.
+3. Thêm import Excel, lịch sử cấp phát/thu hồi, xác thực Microsoft 365 và phân quyền.
+4. Triển khai ứng dụng lên môi trường nội bộ an toàn.
